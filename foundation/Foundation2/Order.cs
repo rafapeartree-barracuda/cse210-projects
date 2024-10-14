@@ -5,6 +5,7 @@ public class Order
 {
     private List<Product> products;
     private Customer customer;
+    // ORDEr    
     public Order(Customer customer)
     {
         this.customer = customer;
@@ -26,6 +27,24 @@ public class Order
 
         // Add shipping cost based on customer location
         total += customer.IsInUSA() ? 5 : 35;
+        //$"Shipping Label:\n{customer.GetName()}\n{customer.GetAddress()}\n=================================="
+        return total;
+    }
+    public double GetTotalProductPrice()
+    {
+        double total = 0;
+        foreach (var product in products)
+        {
+            total += product.GetTotalCost();
+        }
+
+        return total;
+    }
+    public double GetTotalShippingPrice()
+    {
+        double total = 0;
+        total += customer.IsInUSA() ? 5 : 35;
+
         return total;
     }
 
@@ -41,6 +60,6 @@ public class Order
 
     public string GetShippingLabel()
     {
-        return $"Shipping Label:\n{customer.GetName()}\n{customer.GetAddress()}";
+        return $"Shipping Label:\n{customer.GetName()}\n{customer.GetAddress()}\n==================================";
     }
 }
