@@ -1,0 +1,5 @@
+1770
+SimpleGoal|Talk|give a talk in sacramental|400|True
+EternalGoal|Study the Scriptures|at list 10 minutes|100
+ChecklistGoal|Atend temple|go to temple|800|3|400|3
+NegativeGoal|drik coke|drinking coke|30|True
